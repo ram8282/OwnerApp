@@ -5,9 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ✅ Add services to the container.
 
-// 1. Connect to SQL Server
+// 1. Connect to SQLite (for Render or cross-platform support)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // 2. Add MVC and Razor Views
 builder.Services.AddControllersWithViews();
@@ -17,8 +17,7 @@ builder.Services.AddSession();
 
 var app = builder.Build();
 
-// ✅ Configure the HTTP request pipeline.
-
+// ✅ Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -35,7 +34,7 @@ app.UseSession();
 
 app.UseAuthorization();
 
-// ✅ Configure default route
+// ✅ Configure default MVC route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
