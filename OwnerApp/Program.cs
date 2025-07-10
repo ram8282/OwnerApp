@@ -40,4 +40,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// ✅ Set Render-compatible port
+app.Urls.Add("http://*:8080");
+
 app.Run();
