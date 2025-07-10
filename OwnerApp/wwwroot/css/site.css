@@ -1,0 +1,136 @@
+/* ========== Base Reset ========== */
+body {
+    background-color: #F5F7FA;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1F2937;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1F2937;
+    font-weight: 600;
+}
+
+p {
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+/* ========== Header ========== */
+header {
+    background-color: #0A2540;
+    padding: 20px 0;
+}
+
+    header h2 {
+        color: white;
+        font-weight: 600;
+    }
+
+    header nav a {
+        color: white;
+        margin-right: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+        header nav a:hover {
+            color: #0A2540;
+        }
+
+/* ========== Buttons ========== */
+.btn-primary {
+    background-color: #2563EB;
+    border-color: #2563EB;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+    .btn-primary:hover {
+        background-color: #1E40AF;
+        border-color: #1E40AF;
+    }
+
+.white-heading {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ========== Sections ========== */
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #0A2540;
+}
+
+/* ========== Cards ========== */
+.card {
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card-title {
+    color: #0A2540;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-text {
+    font-size: 15px;
+    color: #374151;
+}
+
+/* ========== Footer ========== */
+footer {
+    background-color: #f1f5f9;
+    color: #4B5563;
+    font-size: 14px;
+}
+
+/* ========== Welcome Heading ========== */
+.welcome-heading {
+    color: #0A2540; /* Brand navy blue */
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}

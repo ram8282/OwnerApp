@@ -1,0 +1,44 @@
+﻿@model List<OwnerApp.Models.Contact>
+
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<section class="container py-5">
+    <h2 class="text-center text-primary mb-4">📬 Contact Submissions</h2>
+
+    <div class="text-end mb-3">
+        <a href="/Admin/Logout" class="btn btn-outline-danger">Logout</a>
+    </div>
+
+    @if (Model == null || Model.Count == 0)
+    {
+        <p class="text-center text-muted">No messages found yet.</p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Submitted At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var contact in Model)
+                    {
+                        <tr>
+                            <td>@contact.Name</td>
+                            <td>@contact.Email</td>
+                            <td>@contact.Message</td>
+                            <td>@contact.SubmittedAt.ToString("g")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</section>

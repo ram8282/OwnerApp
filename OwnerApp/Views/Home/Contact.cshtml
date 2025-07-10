@@ -1,0 +1,93 @@
+﻿@model OwnerApp.Models.Contact
+
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<section class="contact-section" data-aos="fade-up">
+    <div class="container">
+        <h2 class="text-center mb-2">
+            <i class="fas fa-phone-volume me-2 text-primary"></i>Contact Us
+        </h2>
+        <p class="text-center mb-4">
+            We’d love to hear from you! Reach out for quotes, consultations, or service bookings.
+        </p>
+
+        <!-- ✅ TempData Success Message -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success text-center">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        <div class="row">
+            <!-- Left Column: Contact Info -->
+            <div class="col-md-6" data-aos="fade-right">
+                <h5><i class="fas fa-phone-alt text-primary me-2"></i>Phone:</h5>
+                <p>+91-9763748282</p>
+
+                <h5><i class="fas fa-envelope text-primary me-2"></i>Email:</h5>
+                <p>ramkrushnaelectrotech@gmail.com</p>
+
+                <h5><i class="fas fa-map-marker-alt text-primary me-2"></i>Address:</h5>
+                <p>Nira ward no 1, Purandar, Pune, 412102</p>
+            </div>
+
+            <!-- Right Column: Contact Form -->
+            <div class="col-md-6 ps-md-5" data-aos="zoom-in">
+                <form method="post" action="/Home/SubmitContact" class="p-4 shadow bg-white rounded">
+                    <h4 class="text-center mb-4" style="color: #0A2540;">
+                        <i class="fas fa-headset me-2 text-primary"></i>Send a Message
+                    </h4>
+
+                    <input type="text" name="Name" class="form-control mb-3" placeholder="Your Name" required />
+                    <input type="email" name="Email" class="form-control mb-3" placeholder="Your Email" required />
+                    <textarea name="Message" class="form-control mb-3" rows="5" placeholder="Your Message" required></textarea>
+
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary px-5">
+                            <i class="fas fa-paper-plane me-2"></i>Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Toggle Button -->
+    <div class="text-center mt-5">
+        <a class="btn btn-link text-decoration-none" data-bs-toggle="collapse" href="#adminLoginForm" role="button" aria-expanded="false" aria-controls="adminLoginForm">
+            🔐 Admin Login
+        </a>
+    </div>
+
+    <!-- Admin Login Form (Hidden) -->
+    <div class="collapse mt-3" id="adminLoginForm">
+        <div class="card card-body mx-auto" style="max-width: 400px;">
+            <h5 class="text-center mb-3">Admin Login</h5>
+
+            <form method="post" action="/Admin/Login">
+                <div class="mb-3">
+                    <input type="text" name="Username" class="form-control" placeholder="Username" required />
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="Password" class="form-control" placeholder="Password" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // Optional: auto-hide success message
+        setTimeout(() => {
+            const alert = document.querySelector('.alert');
+            if (alert) alert.style.display = 'none';
+        }, 5000);
+    </script>
+}
