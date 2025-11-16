@@ -15,7 +15,7 @@ namespace OwnerApp.Controllers
         }
 
         private const string AdminUsername = "admin";
-        private const string AdminPassword = "Admin@8282"; // 🔐 Change this for security
+        private const string AdminPassword = "admin@8282"; // 🔐 Change this for security
 
         // ✅ Login Page (GET)
         public IActionResult Login()
