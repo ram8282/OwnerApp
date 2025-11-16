@@ -3,36 +3,49 @@
 }
 
 <section class="container py-5" data-aos="fade-up">
+
     <h2 class="text-center mb-4 text-dark" data-aos="zoom-in">
         <i class="fas fa-tools me-2 text-primary"></i>Our Work & Projects
     </h2>
 
     <div class="row">
+
+        <!-- Project 1 -->
         <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="card shadow-sm">
-                <img src="@(Url.Content("~/images/LuxaryHouse.jpg"))" class="card-img-top" alt="Project 1">
+                <img src="/images/LuxaryHouse.jpg"
+                     onerror="this.src='/images/fallback.jpg';"
+                     class="card-img-top" alt="Luxury House Electrical Work">
                 <div class="card-body">
                     <p class="card-text">Luxury House Electrical Work – Pune</p>
                 </div>
             </div>
         </div>
 
+        <!-- Project 2 -->
         <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card shadow-sm">
-                <img src="@(Url.Content("~/images/SmartHome.jpg"))" class="card-img-top" alt="Project 2">
+                <img src="/images/SmartHome.jpg"
+                     onerror="this.src='/images/fallback.jpg';"
+                     class="card-img-top" alt="Smart Lighting Setup">
                 <div class="card-body">
                     <p class="card-text">Smart Lighting Setup – Pune</p>
                 </div>
             </div>
         </div>
 
+        <!-- Project 3 -->
         <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="card shadow-sm">
-                <img src="@(Url.Content("~/images/Government.jpg"))" class="card-img-top" alt="Project 3">
+                <img src="/images/Government.jpg"
+                     onerror="this.src='/images/fallback.jpg';"
+                     class="card-img-top" alt="Government Electrical Substation">
                 <div class="card-body">
                     <p class="card-text">Government Electrical Substation Project – Pune</p>
                 </div>
             </div>
         </div>
+
     </div>
+
 </section>
